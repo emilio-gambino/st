@@ -94,49 +94,75 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.75, alphaUnfocused = 0.65;
+float alpha = 0.8, alphaUnfocused = 0.65;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+    /* 8 normal colors */
+    [0] = "#0C1012", /* black   */
+    [1] = "#F47962", /* red     */
+    [2] = "#6DCDE6", /* green   */
+    [3] = "#F08F4C", /* yellow  */
+    [4] = "#56869A", /* blue    */
+    [5] = "#CCA8F9", /* magenta */
+    //[6] = "#00A7D9", /* cyan    */
+    [6] = "yellow3", /* cyan    */
+    [7] = "#E0DBD7", /* white   */
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+    /* 8 bright colors */
+    [8]  = "#6DCDE6",  /* black   */
+    [9]  = "#F47962",  /* red     */
+    [10] = "#00F4FF", /* green   */
+    [11] = "#146379", /* yellow  */
+    [12] = "#56869A", /* blue    */
+    [13] = "#6DCDE6", /* magenta */
+    [14] = "#6996A0", /* cyan    */
+    [15] = "#E0DBD7", /* white   */
 
-	[255] = 0,
+    [130] = "yellow3",
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+    /* special colors */
+    [256] = "#0C1012", /* background */
+    [257] = "#c9c2be", /* foreground */
+    [258] = "#c9c2be",     /* cursor */
+
+	///* 8 normal colors */
+	//"black",
+	//"red3",
+	//"green3",
+	//"yellow3",
+	//"blue2",
+	//"magenta3",
+	//"cyan3",
+	//"gray90",
+//
+	///* 8 bright colors */
+	//"gray50",
+	//"red",
+	//"green",
+	//"yellow",
+	//"#5c5cff",
+	//"magenta",
+	//"cyan",
+	//"white",
+//
+	//[255] = 0,
+//
+	///* more colors can be added after 255 to use with DefaultXX */
+	//"#cccccc",
+	//"#555555",
+	//"gray90", /* default foreground colour */
+	//"black", /* default background colour */
 };
-//#include "/home/emilio/.cache/wal/colors-wal-st.h"
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
+unsigned int defaultfg = 257;
 unsigned int defaultbg = 0;
-unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 258;
 unsigned int bg = 16, bgUnfocused = 16;
 
 /*
