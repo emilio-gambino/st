@@ -94,11 +94,11 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.85;
+float alpha = 0.75, alphaUnfocused = 0.65;
 
 /* Terminal colors (16 first used in escape sequence) */
-/*static const char *colorname[] = {*/
-	/* 8 normal colors 
+static const char *colorname[] = {
+	/* 8 normal colors */
 	"black",
 	"red3",
 	"green3",
@@ -106,9 +106,9 @@ float alpha = 0.85;
 	"blue2",
 	"magenta3",
 	"cyan3",
-	"gray90",*/
+	"gray90",
 
-	/* 8 bright colors 
+	/* 8 bright colors */
 	"gray50",
 	"red",
 	"green",
@@ -118,25 +118,26 @@ float alpha = 0.85;
 	"cyan",
 	"white",
 
-	[255] = 0,*/
+	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	//"#cccccc",
-	//"#555555",
-	//"gray90", /* default foreground colour */
-	//"black", /* default background colour */
-//};
-#include "/home/emilio/.cache/wal/colors-wal-st.h"
+	"#cccccc",
+	"#555555",
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
+};
+//#include "/home/emilio/.cache/wal/colors-wal-st.h"
 
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-//unsigned int defaultfg = 258;
-//unsigned int defaultbg = 259;
-//unsigned int defaultcs = 256;
-//static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 257;
+unsigned int bg = 16, bgUnfocused = 16;
 
 /*
  * Default shape of cursor
